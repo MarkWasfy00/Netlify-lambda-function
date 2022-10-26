@@ -11,6 +11,9 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({ 
         current: info.substring(0, info.indexOf('raised')).trim(),
         goal: info.substring(info.indexOf('of') + 2, info.indexOf('goal')).trim()
-    }),
+      }),
+      headers: {
+        "access-control-allow-origin": "*",
+      },
     };
 };
